@@ -9,7 +9,9 @@ const index = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch(
+        "https://fakestoreapi.com/products?limit=12"
+      );
       const data = await response.json();
       console.log(data);
       setProducts(data);
@@ -31,7 +33,7 @@ const index = () => {
       {products.length > 0 ? (
         <Products products={products} />
       ) : (
-        <div className="bg-[#111827]  border-2 pl-[730px] font-mono font-semibold w-[100%] pt-10 text-white">
+        <div className="bg-[#111827]   pl-[730px] font-mono font-semibold w-[100%] pt-10 text-white">
           Loading Data ..
         </div>
       )}
@@ -39,7 +41,6 @@ const index = () => {
       <Products />
       <Feature />
       <StatCard />
-      <Footer />
     </div>
   );
 };
