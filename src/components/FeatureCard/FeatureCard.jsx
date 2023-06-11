@@ -1,9 +1,10 @@
 import React from "react";
+import Categories from "../Categories/Categories";
 
 const FeatureCard = ({ cards = [1, 2, 3] }) => {
   return (
     <div>
-      <section class="text-gray-600 body-font bg-[#abb2bf]">
+      <section class="text-gray-600 body-font bg-[#111827]">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
             <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
@@ -16,7 +17,7 @@ const FeatureCard = ({ cards = [1, 2, 3] }) => {
           <div class="flex flex-wrap -m-4">
             {cards?.map((card) => {
               return (
-                <div class="p-4 md:w-1/3">
+                <Link to={"categories"} class="p-4 md:w-1/3 cursor-pointer">
                   <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                     <div class="flex items-center mb-3">
                       <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
@@ -32,8 +33,8 @@ const FeatureCard = ({ cards = [1, 2, 3] }) => {
                           <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                         </svg>
                       </div>
-                      <h2 class="text-gray-900 text-lg title-font font-medium">
-                        Shooting Stars
+                      <h2 class="text-gray-900 text-lg title-font font-medium capitalize">
+                        {card || "Example Card"}
                       </h2>
                     </div>
                     <div class="flex-grow">
@@ -57,7 +58,7 @@ const FeatureCard = ({ cards = [1, 2, 3] }) => {
                       </a>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Product = () => {
+const ProductCard = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  console.log(id, "id", product);
+
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
-      setProduct(data);
+      setProduct(data, "Be TOO CHee");
       console.log(data);
     };
     fetchProduct();
   }, []);
 
   if (!Object.keys(product).length > 0)
-    return <div className="text-center bg-[#111827] pt-10 text-[42px] pb-10">Loading Product...</div>;
+    return (
+      <div className="text-center bg-[#111827] pt-10 text-[42px] pb-10">
+        Loading Product...
+      </div>
+    );
 
   return (
     <div>
@@ -197,4 +201,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductCard;

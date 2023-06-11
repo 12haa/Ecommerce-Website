@@ -6,8 +6,8 @@ const navigations = [
     path: "/",
   },
   {
-    name: "Product ",
-    path: "/product",
+    name: "Products ",
+    path: "/products",
   },
   {
     name: "About",
