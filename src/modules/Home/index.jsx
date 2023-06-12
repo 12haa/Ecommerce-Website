@@ -67,7 +67,7 @@ const index = () => {
         "https://fakestoreapi.com/products?limit=12"
       );
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setProducts(data);
     };
     fetchProducts();

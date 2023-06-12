@@ -10,7 +10,7 @@ const Categories = () => {
         "https://fakestoreapi.com/products/categories"
       );
       const data = await response.json();
-      console.log(data, "data");
+      console.log(data, "dataaaaa dadadad");
       setCategories(data);
     };
     fetchCategories();
@@ -20,11 +20,7 @@ const Categories = () => {
     return <div>Loading...</div>;
   }
 
-  return (
-  
-      <FeatureCard cards={categories} />
-   
-  );
+  return <FeatureCard cards={categories} />;
 };
 
 export default Categories;

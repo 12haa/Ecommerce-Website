@@ -1,6 +1,6 @@
 // https://youtube.com/shorts/F4ti9RIv_Rc?feature=share React Beginner Projects
 
-// Watched till 00:59:461
+// Watched till 01:02:00
 import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -10,6 +10,8 @@ import Product from "./modules/Product/ProductCard";
 import { Route, Router, Routes } from "react-router-dom";
 import FeatureCard from "./components/FeatureCard/FeatureCard";
 import Products from "./modules/Products/Products";
+import CategoryProducts from "./modules/CategoryProducts/CategoryProducts";
+import Cart from "./modules/Cart/Cart";
 
 function App() {
   return (
@@ -20,7 +22,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="*" element={<div>404</div>} /> */}
+        <Route path="/categories/:name" element={<CategoryProducts />} />
+        <Route path="/cart" element={<Cart />} />
+
+        <Route path="*" element={<div>404</div>} />
       </Routes>
       <FeatureCard />
       <Footer />
